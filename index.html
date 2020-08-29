@@ -69,6 +69,19 @@
             width: 200px
             }
 
+              .dropbtn {
+              background-color: rgb(200,200,200);
+              color: white;
+              padding: 16px;
+              font-size: 16px;
+              border: none;
+              cursor: pointer;
+            }
+
+            .dropbtn:hover, .dropbtn:focus {
+              background-color: #008CBA;
+            }
+
 
         
             img {
@@ -111,7 +124,11 @@
               <div class="toppane" align="center"><h1>Widget settings</h1></div>
               <button class="button" onclick="dispCorner()">Display Corner points</button>
               <button class="button" onclick="getCSV()">Extract and Download Data</button>
-              <button class="button" onclick="extractData()">Reconstruct Chart</button>
+              <button class="dropbtn" onclick="extractData()">Reconstruct Chart</button>
+              <div id="myDropdown" class="dropdown-content">
+                <a href="#greyscale">Greyscale color Scheme</a>
+                <a href="#seqential">Seqential color Scheme</a>
+                <a href="#diverging">Diverging color Scheme</a>
      
               
             </div>
