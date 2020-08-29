@@ -141,9 +141,11 @@
              imPath=imPath.concat(pathArr[i]);
              imPath=imPath.concat('/');
           }
-          var imName = pathArr[pathArr.length-1].split('.png')[0]
-          var canvIm = imPath.concat('TV_').concat(imName).concat('.png')
-          echo(canvIm);
+          var imName = pathArr[pathArr.length-1].split('.png')[0];
+          var canvIm = imPath.concat('TV_').concat(imName).concat('.png');
+          console.log(imPath);
+          console.log(imName);
+          console.log(canvIm);
           expandImg.src = imgs.src;
           expandImg.parentElement.style.display = "block";
         }
