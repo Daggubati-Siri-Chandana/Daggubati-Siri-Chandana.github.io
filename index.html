@@ -190,14 +190,12 @@
  
               
             //creating an invisible element 
-//             var element = document.createElement('a'); 
-//             element.setAttribute('href',  
-//             'data:text/plain;charset=utf-8, ' 
-//             + encodeURIComponent(text)); 
-//             element.setAttribute('download', canvIm); 
+            var element = document.createElement('a'); 
+            element.setAttribute('href'); 
+            element.setAttribute('download', canvIm); 
 
             // Above code is equivalent to 
-            <a href=canvIM download="file name">data</a>
+//             <a href=canvIM download="file name">data</a>
 
             document.body.appendChild(element); 
 
