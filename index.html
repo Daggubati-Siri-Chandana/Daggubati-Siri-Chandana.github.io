@@ -118,7 +118,8 @@
               <div class="toppane" align="center" id ="top"><h1>Bar chart Analyzer</h1></div>
             <div class="im">
                 <span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span>
-                <img id="expandedImg" style="width:90%">
+                <img id="expandedImg" style="width:40%">
+                <img id="cornerImg" style="width:40%">
             </div>
               
             <div class="reconst">
@@ -143,7 +144,7 @@
         }
         
         function dispCorner() {
-          var expandImg = document.getElementById("expandedImg");
+          var cornerImg = document.getElementById("cornerImg");
           var imgText = document.getElementById("imgtext");
           var pathArr = imgPath.split("/");
           var imPath = '';
@@ -156,8 +157,8 @@
           console.log(imPath);
           console.log(imName);
           console.log(canvIm);
-          expandImg.src = canvIm;
-          expandImg.parentElement.style.display = "block";
+          cornerImg.src = canvIm;
+          cornerImg.parentElement.style.display = "block";
         }
     </script>
     </body> 
