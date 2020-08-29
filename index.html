@@ -56,6 +56,20 @@
               border-collapse: collapse;
               background-color: rgb(255,255,255);
             }
+            .button {
+            background-color: rgb(200,200,200);
+            color: black;
+            border: 2px solid #008CBA;
+            width: 150px
+            }
+
+            .button:hover {
+            background-color: #008CBA;
+            color: white;
+            width: 150px
+            }
+
+
         
             img {
               border: 1px solid #ddd; /* Gray border */
@@ -95,6 +109,10 @@
           
           <div class="rightpane">
               <div class="toppane" align="center"><h1>Widget settings</h1></div>
+              <button class="button" onclick="myFunction()">Display Extracted Cornerpoints</button>
+              <button class="button" onclick="myFunction()">Display Extracted Data</button>
+              <button class="button" onclick="myFunction()">Download CSV</button>
+              
             </div>
           <div class="middlepane" align="center">
               <div class="toppane" align="center"><h1>Bar chart Analyzer</h1></div>
@@ -117,6 +135,12 @@
         function myFunction(imgs) {
           var expandImg = document.getElementById("expandedImg");
           var imgText = document.getElementById("imgtext");
+          var pathArr = imgs.src.split("/");
+          var imPath = '';
+          for(var i=0;i <pathArr.length-1;i++){
+             imPath=imPath.concat(pathArr[i]);
+             imPath=imPath.concat('/');
+          }
           expandImg.src = imgs.src;
           imgText.innerHTML = imgs.alt;
           expandImg.parentElement.style.display = "block";
