@@ -174,6 +174,38 @@
           reconsImg.src = canvIm;
           reconsImg.parentElement.style.display = "block";
         }
+        
+        function getCSV() { 
+          var pathArr = imgPath.split("/");
+          var imPath = '';
+          for(var i=0;i <pathArr.length-1;i++){
+             imPath=imPath.concat(pathArr[i]);
+             imPath=imPath.concat('/');
+          }
+          var imName = pathArr[pathArr.length-1].split('.png')[0];
+          var canvIm = imPath.concat('data_').concat(imName).concat('.csv');
+          console.log(imPath);
+          console.log(imName);
+          console.log(canvIm);
+ 
+              
+            //creating an invisible element 
+            var element = document.createElement('a'); 
+            element.setAttribute('href',  
+            'data:text/plain;charset=utf-8, ' 
+            + encodeURIComponent(text)); 
+            element.setAttribute('download', file); 
+
+            // Above code is equivalent to 
+            // <a href="path of file" download="file name"> 
+
+            document.body.appendChild(element); 
+
+            //onClick property 
+            element.click(); 
+
+            document.body.removeChild(element); 
+        }
     </script>
     </body> 
 </html>
