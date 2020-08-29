@@ -109,7 +109,7 @@
           
           <div class="rightpane">
               <div class="toppane" align="center"><h1>Widget settings</h1></div>
-              <button class="button" onclick="dispCorner()">Display Extracted Cornerpoints</button>
+              <button class="button" onclick="dispCorner()">Display Corner points</button>
               <button class="button" onclick="extractData()">Extract Data</button>
               <button class="button" onclick="getCSV()">Download CSV</button>
               
@@ -144,7 +144,7 @@
         }
         
         function dispCorner() {
-          var cornerImg = document.getElementById("cornerImg");
+          var expandImg = document.getElementById("expandImg");
           var imgText = document.getElementById("imgtext");
           var pathArr = imgPath.split("/");
           var imPath = '';
