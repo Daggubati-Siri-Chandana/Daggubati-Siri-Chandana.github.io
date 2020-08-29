@@ -109,7 +109,7 @@
           
           <div class="rightpane">
               <div class="toppane" align="center"><h1>Widget settings</h1></div>
-              <button class="button" onclick="dispCorner(container.leftpane.img)">Display Extracted Cornerpoints</button>
+              <button class="button" onclick="dispCorner()">Display Extracted Cornerpoints</button>
               <button class="button" onclick="extractData()">Extract Data</button>
               <button class="button" onclick="getCSV()">Download CSV</button>
               
@@ -132,18 +132,20 @@
 
         </div>
     <script>
+        var imgPath =''
         function myFunction(imgs) {
           var expandImg = document.getElementById("expandedImg");
           var imgText = document.getElementById("imgtext");
      
           expandImg.src = imgs.src;
+          imgPath = imgs.src
           expandImg.parentElement.style.display = "block";
         }
         
-        function dispCorner(imgs) {
+        function dispCorner() {
           var expandImg = document.getElementById("expandedImg");
           var imgText = document.getElementById("imgtext");
-          var pathArr = imgs.src.split("/");
+          var pathArr = imgPath.split("/");
           var imPath = '';
           for(var i=0;i <pathArr.length-1;i++){
              imPath=imPath.concat(pathArr[i]);
