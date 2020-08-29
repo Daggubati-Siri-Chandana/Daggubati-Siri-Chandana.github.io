@@ -118,12 +118,12 @@
               <div class="toppane" align="center" id ="top"><h1>Bar chart Analyzer</h1></div>
             <div class="im">
                 <span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span>
-                <img id="expandedImg" style="width:40%">
-                <img id="cornerImg" style="width:40%">
+                <img id="expandedImg" style="width:90%">
+                <img id="reconsImg" style="width:90%">
             </div>
               
             <div class="reconst">
-                add reconstruction
+                
             </div>
             <div class="dat">
                 add table
@@ -159,6 +159,23 @@
           console.log(canvIm);
           cornerImg.src = canvIm;
           cornerImg.parentElement.style.display = "block";
+        }
+        function extractData() {
+          var reconsImg = document.getElementById("reconsImg");
+          var imgText = document.getElementById("imgtext");
+          var pathArr = imgPath.split("/");
+          var imPath = '';
+          for(var i=0;i <pathArr.length-1;i++){
+             imPath=imPath.concat(pathArr[i]);
+             imPath=imPath.concat('/');
+          }
+          var imName = pathArr[pathArr.length-1].split('.png')[0];
+          var canvIm = imPath.concat('reconstructed_').concat(imName).concat('.png');
+          console.log(imPath);
+          console.log(imName);
+          console.log(canvIm);
+          reconsImg.src = canvIm;
+          reconsImg.parentElement.style.display = "block";
         }
     </script>
     </body> 
