@@ -1,42 +1,119 @@
 <html> 
     <head>   
     <title>Divide Tab </title>
-        <style> body, html {  
-            width: 100%;   height: 100%;   margin: 0; }
+        <style>
+                         
+            body, html {
+              width: 100%;
+              height: 100%;
+              margin: 0;
+            }
 
-            .container {   width: 100%;   height: 100%; } .leftpane {
-                width: 25%;
+            .container {
+              width: 100%;
+              height: 100%;
+            }
+
+            .leftpane {
+                width: 17%;
                 height: 100%;
                 float: left;
+                background-color: rgb(200,200,200);
                 border-collapse: collapse;
-                 text-align: center; }
+            }
 
             .middlepane {
-                width: 50%;
+                width: 60%;
                 height: 100%;
                 float: left;
+                background-color: rgb(255,255,255);
                 border-collapse: collapse;
-                 text-align: center; }
+            }
+            .middlepane > div {
+                height: 33%;
+            }
+            .im {
+                float: top;
+            }
+            .reconst {
+                float: bottom;
+            }
+            .dat {
+                margin: auto;
+            }
+            .rightpane {
+              width: 23%;
+              height: 100%;
+              position: relative;
+              float: right;
+              background-color: rgb(200,200,200);
+              border-collapse: collapse;
+            }
 
-            .rightpane {   width: 25%;   height: 100%;   position: relative;  
-            float: right;   border-collapse:
-            collapse;    text-align: center; }
+            .toppane {
+              width: 100%;
+              height: 40px;
+              border-collapse: collapse;
+              background-color: rgb(255,255,255);
+            }
+        
+            img {
+              border: 1px solid #ddd; /* Gray border */
+              border-radius: 4px;  /* Rounded border */
+              padding: 5px; /* Some padding */
+              width: 70px; /* Set a small width */
+            }
 
-            .toppane {   width: 100%;   height: 100px;   border-collapse:
-            collapse;     text-align: center; }
-</style>
-
+            /* Add a hover effect (blue shadow) */
+            img:hover {
+              box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
+            }
+        </style>
 </head> 
     <body>  
-        <div class="container">   
-            <div class="toppane">
-                <h2>Top View</h2></div>  
-            <div class="leftpane">
-                <h1>Left View</h1></div>   
-            <div class="middlepane">
-                <h2>Middle View</h2></div>
-            <div class="rightpane">
-                <h1>Right View</h1></div> 
-        </div> 
+        <div class="container">
+
+          <div class="leftpane" align="center">
+              <div class="toppane" align="center"><h1>Chart Images</h1></div>
+              <img src="data/_Test/HorizontalBar/hb1/hb1.png " onclick="myFunction(this);">
+              <img src="data/_Test/HorizontalStackedBar/hsb3/hsb3.png " onclick="myFunction(this);">
+              <img src="data/_Test/Histogram/hist3/hist3.png " onclick="myFunction(this);">
+              <img src="data/_Test/GroupedBar/gb1/gb1.png " onclick="myFunction(this);">
+              <img src="data/_Test/GroupedBar/gb2/gb2.png " onclick="myFunction(this);">
+              <img src="data/_Test/GroupedBar/gb3/gb3.png " onclick="myFunction(this);">
+              <img src="data/_Test/GroupedBar/gb5/gb03.png " onclick="myFunction(this);">
+              <img src="data/_Test/GroupedBar/test/test.png" onclick="myFunction(this);">
+          </div>
+          
+          <div class="rightpane">
+              <div class="toppane" align="center"><h1>Widget settings</h1></div>
+          </div>
+          
+          <div class="middlepane" align="center">
+              <div class="toppane" align="center"><h1>Bar chart Analyzer</h1></div>
+            <div class="im">
+                <a target="_blank" href="data/_Test/GroupedBar/test/test.png">
+                <img src="data/_Test/GroupedBar/test/test.png">
+            </div>
+            <div class="reconst">
+                add reconstruction
+            </div>
+            <div class="dat">
+                add table
+            </div>
+          </div>
+        </div>
+
+        </div>
     </body> 
 </html>
+
+
+<style>
+
+</style>
+<body>
+
+
+
+</body>
