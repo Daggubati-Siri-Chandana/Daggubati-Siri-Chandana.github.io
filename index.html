@@ -145,7 +145,7 @@
               <div class="toppane" align="center"><h1>Widget settings</h1></div>
                   <button class="button" onclick="dispCorner()">Display Corner points</button>
                   <button class="button" onclick="getCSV()">Extract and Download Data</button>
-                  <div class="dropdown">
+<!--                   <div class="dropdown">
                       <button id="myBtn" class="dropbtn">Dropdown</button>
                       <button class="dropbtn" onclick='extractData()'>Reconstruct Chart</button>
                        <div id="myDropdown" class="dropdown-content">
@@ -153,7 +153,18 @@
                         <a href="#seqential">Seqential color Scheme</a>
                         <a href="#diverging">Diverging color Scheme</a>
                       </div>
-                   </div>
+                   </div> -->
+              <label for="color-select">Choose a pet:</label>
+
+            <label for="color-select">Choose color scheme for reconstruction:</label>
+
+            <select name="color" id="color-select">
+                <option value="">--Please choose an option--</option>
+                <option value="grey">Grescale</option>
+                <option value="Sequential">Sequential</option>
+                <option value="Diverging">Diverging</option>
+                <
+            </select>
               </div>
             </div>
           <div class="middlepane" align="center">
