@@ -100,12 +100,12 @@
                 color: rgb(255,255,255);
             }
         
-            img {
+/*             img {
               border: 1px solid #ddd; /* Gray border */
               border-radius: 2px;  /* Rounded border */
               padding: 2px; /* Some padding */
               width: 70px; /* Set a small width */
-            }
+            } */
             img:hover {
               box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
             }
@@ -221,7 +221,7 @@
                   var canvIm = imPath.concat('grey_').concat(imName).concat('.png');
               }
           }else {
-             var canvIm = '/data/blank.png';
+             var canvIm = '';
           }
           reconsImg.src = canvIm;
           reconsImg.parentElement.style.display = "block";
