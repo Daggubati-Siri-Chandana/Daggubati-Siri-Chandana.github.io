@@ -1,4 +1,4 @@
-<html> 
+<html>
     <head>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
@@ -23,12 +23,12 @@
               width: 100%;
               border-collapse: collapse;
             }
-            .hidediv {
+            /*.hidediv {
                 width: 100%;
                 background-image: url("/data/bg.png");
                 background-repeat:no-repeat;
                 display:"none";
-            }
+            }*/
 
 
             .leftpane {
@@ -130,12 +130,12 @@
     <div class="container">
       <div class="toppane" align="center">
           <div class="divh1"><h1>Bar Chart Analyzer</h1></div>
-          <button class="button" onclick="hide()">Architecture Diagram</button>
-          <div class="hidediv"></div>
+          <button class="button" id="arch">Architecture Diagram</button>
+          <img src="/data/teaser.png" id="arch" style="width:100%">
       </div>
       
       <div class="leftpane" align="center">
-          <div class="divh1"><h1>Annotated Chart Images</h1></div>
+          <div class="divh1"><h1>Chart Images</h1></div>
           <img src="/data/Test/HorizontalBar/hb1/hb1.png" onclick="myFunction(this);">
           <img src="/data/Test/HorizontalStackedBar/hsb3/hsb3.png " onclick="myFunction(this);">
           <img src="/data/Test/Histogram/hist3/hist3.png " onclick="myFunction(this);">
@@ -225,7 +225,7 @@
         }
         
          // To download csv
-        function getCSV() { 
+        function getCSV() {
           var pathArr = imgPath.split("/");
           var imPath = '';
           for(var i=0;i <pathArr.length-1;i++){
@@ -245,9 +245,15 @@
             element.click();
             document.body.removeChild(element);
         }
-    
-        // To display csv table
         $(document).ready(function(){
+          $("button").prop('id', 'arch').click(function(){
+            $("img").prop('id', 'arch').toggle(1000, function(){
+              alert("The toggle() method is finished!");
+            });
+          });
+        });
+        // To display csv table
+        /*$(document).ready(function(){
          $('#load_data').click(function(){
           $.ajax({
            url:"/data/Test/HorizontalBar/hb1/data_hb1.csv",
@@ -278,10 +284,10 @@
            }
           });
          });
-        });
+        });*/
         
     </script>
-    </body> 
+    </body>
 </html>
 
 
