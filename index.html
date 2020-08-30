@@ -1,4 +1,4 @@
-<html> 
+<html>
     <head>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
@@ -25,14 +25,9 @@
             }
             .hidediv {
                 width: 100%;
-                background-image: url("/data/bg.png");
-                background-repeat:no-repeat;
-                display:"none";
             }
-
-
             .leftpane {
-                width: 17%;
+                width: 15%;
                 height: 100%;
                 float: left;
                 background-color: rgb(200,200,200);
@@ -40,7 +35,7 @@
             }
 
             .middlepane {
-                width: 65%;
+                width: 60%;
                 height: 100%;
                 float: left;
                 background-color: rgb(255,255,255);
@@ -55,7 +50,7 @@
                 float: bottom;
             }
             .rightpane {
-              width: 18%;
+              width: 25%;
               height: 100%;
               position: relative;
               float: right;
@@ -105,12 +100,12 @@
                 color: rgb(255,255,255);
             }
         
-            img {
+     img {
               border: 1px solid #ddd; /* Gray border */
               border-radius: 2px;  /* Rounded border */
               padding: 2px; /* Some padding */
               width: 70px; /* Set a small width */
-            }
+            } 
             img:hover {
               box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
             }
@@ -122,6 +117,9 @@
               font-size: 35px;
               cursor: pointer;
             }
+            [src=''] {
+    visibility: hidden;
+}
         </style>
 </head>
     
@@ -130,12 +128,16 @@
     <div class="container">
       <div class="toppane" align="center">
           <div class="divh1"><h1>Bar Chart Analyzer</h1></div>
-          <button class="button" onclick="hide()">Architecture Diagram</button>
-          <div class="hidediv"></div>
+          <button class="button" id="hideme">System Architecture Diagram</button>
+          <button class="button" id="hideved">Image Annotation <br />(Demo Video)</button>
+          <div class="hidediv" id="arch" style="display:none;"><img src="/data/teaser.png"  style="width:100%"></div>
+          <div id="demoved" style="display:none;">
+              <iframe width="560" height="315" src="https://www.youtube.com/embed/t3rlG_v8sMs" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
       </div>
       
       <div class="leftpane" align="center">
-          <div class="divh1"><h1>Annotated Chart Images</h1></div>
+          <div class="divh1"><h1>Chart Images</h1></div>
           <img src="/data/Test/HorizontalBar/hb1/hb1.png" onclick="myFunction(this);">
           <img src="/data/Test/HorizontalStackedBar/hsb3/hsb3.png " onclick="myFunction(this);">
           <img src="/data/Test/Histogram/hist3/hist3.png " onclick="myFunction(this);">
@@ -152,12 +154,16 @@
               <input type="checkbox" id="reconstruct" onclick="dispPage()"><label font-size="16px">Display Reconstructed Chart</label>
               <label font-size="16px">Color map for chart reconstruction</label>
               <select id="myDropdown" class="dropbtn" onchange="dispPage()">
-                <option value="grey">Sequential Grey map</option>
-                <option value="per">Perceptually uniform map</option>
-                <option value="qual">Qualitative map</option>
+                <option value="grey">Grayscale color map</option>
+                <option value="per">Perceptually uniform color map</option>
+                <option value="qual">Qualitative color map</option>
               </select>
               <br>
-              <button class="button" onclick="getCSV()">Extract and Download Data</button>
+              <br>
+              <br>
+              <br>
+              <br>
+              <button class="button" onclick="getCSV()">Download Extracted Data(csv)</button>
               
       </div>
     
@@ -169,6 +175,13 @@
             <img id="reconsImg" style="width:50%">
         </div>
         <div id="employee_table"></div>
+        <div class="info", align="center">
+              <p><center><span style="font-weight:bold" >Komal Dadhich, Siri Chandana Daggubati, Jaya Sreevalsan-Nair <br />Graphics-Visualization-Computing Lab</center></span></p>
+              <p>International Institute of Information Technology Bangalore,<br /> 26/C, Hosur Rd, Electronics City Phase 1, Electronic City, <br />Bengaluru, Karnataka 560100</p>
+              <p><span>Email:</span> <a href="mailto:jnair@iiitb.ac.in">jnair@iiitb.ac.in, komal.dadhich@iiitb.org, daggubati.sirichandana@iiitb.org</a></p>
+              <p><span>Website:</span> <a href="https://www.iiitb.ac.in/GVCL/">https://www.iiitb.ac.in/GVCL/</a></p>
+              <p>This work has been supported by the Machine Intelligence and Robotics (MINRO) Center grant to IIIT Bangalore from the Government of Karnataka.</p>
+          </div>
      </div>
     </div>
     <script>
@@ -215,17 +228,17 @@
               else{
                   var canvIm = imPath.concat('grey_').concat(imName).concat('.png');
               }
+                reconsImg.src = canvIm;
+                reconsImg.parentElement.style.display = "block";
           }else {
-             var canvIm = '';
+             reconsImg.src = '';
+             reconsImg.parentElement.style.display = "none";
           }
-          reconsImg.src = canvIm;
-          reconsImg.parentElement.style.display = "block";
           expandImg.parentElement.style.display = "block";
-          
         }
         
          // To download csv
-        function getCSV() { 
+        function getCSV() {
           var pathArr = imgPath.split("/");
           var imPath = '';
           for(var i=0;i <pathArr.length-1;i++){
@@ -245,9 +258,18 @@
             element.click();
             document.body.removeChild(element);
         }
-    
+        $( "#hideme" ).click(function() {
+          $( "#arch" ).toggle( "slow", function() {
+            // Animation complete.
+          });
+        });
+        $( "#hideved" ).click(function() {
+          $( "#demoved" ).toggle( "slow", function() {
+            // Animation complete.
+          });
+        });
         // To display csv table
-        $(document).ready(function(){
+        /*$(document).ready(function(){
          $('#load_data').click(function(){
           $.ajax({
            url:"/data/Test/HorizontalBar/hb1/data_hb1.csv",
@@ -278,10 +300,10 @@
            }
           });
          });
-        });
+        });*/
         
     </script>
-    </body> 
+    </body>
 </html>
 
 
