@@ -213,6 +213,7 @@
           }else {
              var canvIm = imPath.concat(imName).concat('.png');
           }
+          expandImg.src = canvIm;
           if (cb2.checked == true){
               if(clr==1){
                   var canvIm = imPath.concat('per_').concat(imName).concat('.png');
@@ -228,7 +229,6 @@
           }else {
              reconsImg.parentElement.style.display = "none";
           }
-          expandImg.src = canvIm;
           expandImg.parentElement.style.display = "block";
         }
         
