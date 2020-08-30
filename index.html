@@ -123,8 +123,10 @@
     <div class="container">
       <div class="toppane" align="center">
           <div class="divh1"><h1>Bar Chart Analyzer</h1></div>
-          <img src="/data/teaser.png" style="width:100%">
+          <button class="button" onclick="hide()">Architecture Diagram</button>
+          <div class="hidediv"><img src="/data/teaser.png" style="width:100%"></div>
       </div>
+      
       <div class="leftpane" align="center">
           <div class="divh1"><h1>Annotated Chart Images</h1></div>
           <img src="/data/Test/HorizontalBar/hb1/hb1.png" onclick="myFunction(this);">
@@ -163,6 +165,14 @@
      </div>
     </div>
     <script>
+        function hide() {
+        var x = document.getElementById("hidediv");
+            if (x.style.display === "none") {
+              x.style.display = "block";
+            } else {
+              x.style.display = "none";
+            }
+        }
         var imgPath =''
         function myFunction(imgs) {
           imgPath = imgs.src;
