@@ -1,6 +1,6 @@
 <html> 
     <head>   
-    <title>Divide Tab </title>
+    <title>Bar Chart Analyzer</title>
         <style>
                          
             body, html {
@@ -28,8 +28,8 @@
                 float: left;
                 background-color: rgb(255,255,255);
                 border-collapse: collapse;
-                background-image: url("/data/bg.png");
-                background-repeat:no-repeat;
+/*                 background-image: url("/data/bg.png");
+                background-repeat:no-repeat; */
             }
             .im {
                 float: top;
@@ -140,11 +140,11 @@
     
     
       <div class="middlepane" align="center">
-        <div class="toppane" id ="top"><h1>Bar chart Analyzer</h1></div>
+        <div class="toppane" id ="top"><h1>Bar Chart Analyzer</h1></div>
         <div class="im">
             <span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span>
-            <img id="expandedImg" style="width:90%">
-            <img id="reconsImg" style="width:90%">
+            <img id="expandedImg" style="width:50%">
+            <img id="reconsImg" style="width:50%">
         </div>
         <div id="employee_table">
         </div>
@@ -193,7 +193,7 @@
               var canvIm = imPath.concat('grey_').concat(imName).concat('.png');
           }
           else if(clr==1){
-              var canvIm = imPath.concat('per').concat(imName).concat('.png');
+              var canvIm = imPath.concat('per_').concat(imName).concat('.png');
           }
           else if(clr==2){
               var canvIm = imPath.concat('qual_').concat(imName).concat('.png');
