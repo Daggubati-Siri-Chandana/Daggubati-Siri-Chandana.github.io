@@ -23,14 +23,9 @@
               width: 100%;
               border-collapse: collapse;
             }
-            /*.hidediv {
+            .hidediv {
                 width: 100%;
-                background-image: url("/data/bg.png");
-                background-repeat:no-repeat;
-                display:"none";
-            }*/
-
-
+            }
             .leftpane {
                 width: 17%;
                 height: 100%;
@@ -131,7 +126,7 @@
       <div class="toppane" align="center">
           <div class="divh1"><h1>Bar Chart Analyzer</h1></div>
           <button class="button" id="arch">Architecture Diagram</button>
-          <img src="/data/teaser.png" id="arch" style="width:100%">
+          <div class="hidediv" id="arch"><img src="/data/teaser.png"  style="width:100%"></div>
       </div>
       
       <div class="leftpane" align="center">
@@ -247,7 +242,7 @@
         }
         $(document).ready(function(){
           $("button").prop('id', 'arch').click(function(){
-                                               $("img").prop('id', 'arch').toggle(1000);
+                                               $("div").prop('id', 'arch').toggle(1000);
           });
         });
 
