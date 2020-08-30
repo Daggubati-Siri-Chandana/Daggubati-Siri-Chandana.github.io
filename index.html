@@ -23,14 +23,11 @@
             }
 
             .middlepane {
-                width: 60%;
+                width: 66%;
                 height: 100%;
                 float: left;
                 background-color: rgb(255,255,255);
                 border-collapse: collapse;
-            }
-            .middlepane > div {
-                height: 33%;
             }
             .im {
                 float: top;
@@ -38,11 +35,8 @@
             .reconst {
                 float: bottom;
             }
-            .dat {
-                margin: auto;
-            }
             .rightpane {
-              width: 23%;
+              width: 17%;
               height: 100%;
               position: relative;
               float: right;
@@ -52,30 +46,36 @@
 
             .toppane {
               width: 100%;
-              height: 40px;
               border-collapse: collapse;
               background-color: rgb(255,255,255);
             }
             .button {
             background-color: rgb(200,200,200);
+            padding: 16px;
+            font-size: 16px;
             color: black;
+            cursor: pointer;
             border: 2px solid #008CBA;
-            width: 150px
+            border-radius: 4px;
+            margin-bottom:10px;
+            width: 180px
             }
 
             .button:hover {
             background-color: #008CBA;
             color: white;
-            width: 200px
+            width: 180px
             }
 
-              .dropbtn {
+            .dropbtn {
               background-color: rgb(200,200,200);
-              color: white;
+              color: black;
               padding: 16px;
               font-size: 16px;
-              border: none;
               cursor: pointer;
+              border: 2px solid #008CBA;
+              border-radius: 4px;
+              width: 180px;
             }
 
             .dropbtn:hover, .dropbtn:focus {
@@ -90,8 +90,8 @@
             .dropdown-content {
               display: none;
               position: absolute;
-              background-color: #f9f9f9;
-              min-width: 160px;
+              background-color: rgb(200,200,200);
+              min-width: 180px;
               overflow: auto;
               box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
             }
@@ -103,21 +103,17 @@
               display: block;
             }
 
-
-        
+            .dropdown-content a:hover {background-color: #008CBA}
+            .show {display:block;}
             img {
               border: 1px solid #ddd; /* Gray border */
               border-radius: 4px;  /* Rounded border */
               padding: 5px; /* Some padding */
               width: 70px; /* Set a small width */
             }
-
-            /* Add a hover effect (blue shadow) */
             img:hover {
               box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
             }
-            
-            /* Closable button inside the image */
             .closebtn {
               position: absolute;
               top: 10px;
@@ -126,62 +122,57 @@
               font-size: 35px;
               cursor: pointer;
         </style>
-</head> 
-    <body>  
-        <div class="container">
-          <div class="leftpane" align="center">
-              <div class="toppane" align="center"><h1>Chart Images</h1></div>
-              <img src="/data/Test/GroupedBar/gb1/gb1.png" onclick="myFunction(this);">
-              <img src="/data/Test/HorizontalStackedBar/hsb3/hsb3.png " onclick="myFunction(this);">
-              <img src="/data/Test/Histogram/hist3/hist3.png " onclick="myFunction(this);">
-              <img src="/data/Test/GroupedBar/gb1/gb1.png " onclick="myFunction(this);">
-              <img src="/data/Test/GroupedBar/gb2/gb2.png " onclick="myFunction(this);">
-              <img src="/data/Test/GroupedBar/gb3/gb3.png " onclick="myFunction(this);">
-              <img src="/data/Test/GroupedBar/gb5/gb03.png " onclick="myFunction(this);">
-              <img src="/data/Test/GroupedBar/test/test.png" onclick="myFunction(this);">
-          </div>
-          
-          <div class="rightpane">
-              <div class="toppane" align="center"><h1>Widget settings</h1></div>
-                  <button class="button" onclick="dispCorner()">Display Corner points</button>
-                  <button class="button" onclick="getCSV()">Extract and Download Data</button>
-<!--                   <div class="dropdown">
-                      <button id="myBtn" class="dropbtn">Dropdown</button>
-                      <button class="dropbtn" onclick='extractData()'>Reconstruct Chart</button>
-                       <div id="myDropdown" class="dropdown-content">
-                        <a href="#greyscale">Greyscale color Scheme</a>
-                        <a href="#seqential">Seqential color Scheme</a>
-                        <a href="#diverging">Diverging color Scheme</a>
-                      </div>
-                   </div> -->
-              </br>
-            <label for="color-select">Choose color scheme for reconstruction:</label>
-
-            <select name="color" id="color-select">
-                <option value="">--Please choose an option--</option>
-                <option value="grey">Grescale</option>
-                <option value="Sequential">Sequential</option>
-                <option value="Diverging">Diverging</option>
-                <
-            </select>
-              </div>
-            </div>
-          <div class="middlepane" align="center">
-              <div class="toppane" align="center" id ="top"><h1>Bar chart Analyzer</h1></div>
-            <div class="im">
-                <span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span>
-                <img id="expandedImg" style="width:50%">
-                <img id="reconsImg" style="width:50%">
-            </div>
-            <div class="dat">
-                add table
-            </div>
-          </div>
+</head>
+    
+    
+<body>
+    <div class="container">
+      <div class="leftpane" align="center">
+          <div class="toppane"><h1>Chart Images</h1></div>
+          <img src="/data/Test/GroupedBar/gb1/gb1.png" onclick="myFunction(this);">
+          <img src="/data/Test/HorizontalStackedBar/hsb3/hsb3.png " onclick="myFunction(this);">
+          <img src="/data/Test/Histogram/hist3/hist3.png " onclick="myFunction(this);">
+          <img src="/data/Test/GroupedBar/gb1/gb1.png " onclick="myFunction(this);">
+          <img src="/data/Test/GroupedBar/gb2/gb2.png " onclick="myFunction(this);">
+          <img src="/data/Test/GroupedBar/gb3/gb3.png " onclick="myFunction(this);">
+          <img src="/data/Test/GroupedBar/gb5/gb03.png " onclick="myFunction(this);">
+          <img src="/data/Test/GroupedBar/test/test.png" onclick="myFunction(this);">
+      </div>
+      
+      <div class="rightpane" align="center">
+              <div class="toppane" height="80px"><h1>Widget Settings</h1></div>
+              <button class="button" onclick="dispCorner()">Display Corner points</button>
+              <button class="button" onclick="getCSV()">Extract and Download Data</button>
+<!--                  <button class="dropbtn" onclick='extractData()'>Reconstruct Chart</button>-->
+              <div class="dropdown">
+                  <button id="myBtn" class="dropbtn">Reconstruct Chart</button>
+                  <div id="myDropdown" class="dropdown-content">
+                    <a href="#grey">GreyScale</a>
+                    <a href="#seq">Sequential</a>
+                    <a href="#diverging">Diverging</a>
+                  </div>
+             </div>
+      </div>
+    
+    
+      <div class="middlepane" align="center">
+        <div class="toppane" id ="top"><h1>Bar chart Analyzer</h1></div>
+        <div class="im">
+            <span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span>
+            <img id="expandedImg" style="width:90%">
+            <img id="reconsImg" style="width:90%">
         </div>
-
         </div>
+     </div>
+    </div>
     <script>
         var imgPath =''
+        
+        document.getElementById("myBtn").onclick = function() {colorSch()};
+        function colorSch() {
+          document.getElementById("myDropdown").classList.toggle("show");
+        }
+    
         function myFunction(imgs) {
           var expandImg = document.getElementById("expandedImg");
           var imgText = document.getElementById("imgtext");
@@ -238,23 +229,17 @@
           console.log(imPath);
           console.log(imName);
           console.log(canvIm);
- 
-              
-            //creating an invisible element 
-            var element = document.createElement('a'); 
-            element.setAttribute('href', canvIm); 
-            element.setAttribute('download', canvIm); 
-
-            // Above code is equivalent to 
-//             <a href=canvIM download="file name">data</a>
-
-            document.body.appendChild(element); 
-
-            //onClick property 
-            element.click(); 
-
-            document.body.removeChild(element); 
+            //creating an invisible element
+            var element = document.createElement('a');
+            element.setAttribute('href', canvIm);
+            element.setAttribute('download', canvIm);
+            document.body.appendChild(element);
+            element.click();
+            document.body.removeChild(element);
         }
+        
+
+    
     </script>
     </body> 
 </html>
