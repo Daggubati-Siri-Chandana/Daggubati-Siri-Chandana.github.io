@@ -128,7 +128,9 @@
       
       <div class="rightpane" align="center">
               <div class="toppane" height="80px"><h1>Widget Settings</h1></div>
-              <button class="button" onclick="dispCorner()">Display Corner points</button>
+<!--              <button class="button" onclick="dispCorner()">Display Corner points</button>-->
+              <input type="checkbox" id="corner" onclick="dispPage()"><label font-size="16px">Display Corner points</label>
+    
               <label font-size="16px">Color map for chart reconstruction</label>
               
               <select id="myDropdown" class="dropbtn">
@@ -137,7 +139,8 @@
                 <option value="qual">Qualitative map</option>
               </select>
               <br>
-              <button class="button" onclick='extractData()'>Display Reconstructed Chart</button>
+              <input type="checkbox" id="corner" onclick="dispPage()"><label font-size="16px">Display Reconstructed Chart</label>
+<!--              <button class="button" onclick='extractData()'>Display Reconstructed Chart</button>-->
               <button class="button" onclick="getCSV()">Extract and Download Data</button>
               <!--              <button class="button"  name="load_data" id="load_data">Load Data</button>-->
               
@@ -164,8 +167,12 @@
           imgPath = imgs.src
           expandImg.parentElement.style.display = "block";
         }
+}
         
-        function dispCorner() {
+        function dispPage() {
+          var checkBox = document.getElementById("corner");
+          var clr = document.getElementById("myDropdown").selectedIndex;
+          var reconsImg = document.getElementById("reconsImg");
           var expandImg = document.getElementById("expandedImg");
           var imgText = document.getElementById("imgtext");
           var pathArr = imgPath.split("/");
@@ -175,37 +182,28 @@
              imPath=imPath.concat('/');
           }
           var imName = pathArr[pathArr.length-1].split('.png')[0];
-          var canvIm = imPath.concat('TV_').concat(imName).concat('.png');
-          console.log(imPath);
-          console.log(imName);
-          console.log(canvIm);
-          expandImg.src = canvIm;
-          expandImg.parentElement.style.display = "block";
-        }
-        function extractData() {
-            var clr = document.getElementById("myDropdown").selectedIndex;
-            var reconsImg = document.getElementById("reconsImg");
-            var imgText = document.getElementById("imgtext");
-            var pathArr = imgPath.split("/");
-            var imPath = '';
-            for(var i=0;i <pathArr.length-1;i++){
-               imPath=imPath.concat(pathArr[i]);
-               imPath=imPath.concat('/');
-            }
-            var imName = pathArr[pathArr.length-1].split('.png')[0];
-          if(clr==0){
-              var canvIm = imPath.concat('grey_').concat(imName).concat('.png');
+          if (checkBox.checked == true){
+            var canvIm = imPath.concat('TV_').concat(imName).concat('.png');
+          } else {
+             var canvIm = imPath.concat(imName).concat('.png');
           }
-          else if(clr==1){
+          expandImg.src = canvIm;
+          if(clr==1){
               var canvIm = imPath.concat('per_').concat(imName).concat('.png');
           }
           else if(clr==2){
               var canvIm = imPath.concat('qual_').concat(imName).concat('.png');
           }
-              reconsImg.src = canvIm;
-              reconsImg.parentElement.style.display = "block";
+          else{
+              var canvIm = imPath.concat('grey_').concat(imName).concat('.png');
+          }
+          reconsImg.src = canvIm;
+          reconsImg.parentElement.style.display = "block";
+          expandImg.parentElement.style.display = "block";
+          
         }
         
+
         function getCSV() { 
           var pathArr = imgPath.split("/");
           var imPath = '';
