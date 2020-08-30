@@ -126,6 +126,7 @@
               <div class="toppane" height="80px"><h1>Widget Settings</h1></div>
               <button class="button" onclick="dispCorner()">Display Corner points</button>
               <button class="button" onclick="getCSV()">Extract and Download Data</button>
+              <button class="button"  name="load_data" id="load_data">Load Data</button>
               <label font-size="16px">Choose a color map for chart reconstruction</label>
               <select id="myDropdown" class="dropbtn">
                 <option value="grey">Sequential Grey map</option>
@@ -134,6 +135,7 @@
               </select>
               <br>
               <button class="button" onclick='extractData()'>Reconstruct Chart</button>
+              
       </div>
     
     
@@ -144,6 +146,7 @@
             <img id="expandedImg" style="width:90%">
             <img id="reconsImg" style="width:90%">
         </div>
+        <div id="employee_table">
         </div>
      </div>
     </div>
