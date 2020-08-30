@@ -170,7 +170,7 @@
         
         function dispPage() {
           var cb1 = document.getElementById("corner");
-          var cb1 = document.getElementById("reconstruct");
+          var cb2 = document.getElementById("reconstruct");
           var clr = document.getElementById("myDropdown").selectedIndex;
           var reconsImg = document.getElementById("reconsImg");
           var expandImg = document.getElementById("expandedImg");
@@ -184,11 +184,11 @@
           var imName = pathArr[pathArr.length-1].split('.png')[0];
           if (cb1.checked == true)
             var canvIm = imPath.concat('TV_').concat(imName).concat('.png');
-          } else {
+          }else {
              var canvIm = imPath.concat(imName).concat('.png');
           }
           expandImg.src = canvIm;
-          if (cb1.checked == true){
+          if (cb2.checked == true){
               if(clr==1){
                   var canvIm = imPath.concat('per_').concat(imName).concat('.png');
               }
@@ -198,8 +198,7 @@
               else{
                   var canvIm = imPath.concat('grey_').concat(imName).concat('.png');
               }
-          }
-          else {
+          }else {
              var canvIm = '';
           }
           reconsImg.src = canvIm;
