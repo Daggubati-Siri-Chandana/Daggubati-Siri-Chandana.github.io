@@ -151,9 +151,9 @@
         var imgPath =''
         function myFunction(imgs) {
           var expandImg = document.getElementById("expandedImg");
-          var imgText = document.getElementById("imgtext");
-     
+          var reconsImg = document.getElementById("reconsImg");
           expandImg.src = imgs.src;
+          reconsImg.src = '';
           imgPath = imgs.src
           expandImg.parentElement.style.display = "block";
         }
