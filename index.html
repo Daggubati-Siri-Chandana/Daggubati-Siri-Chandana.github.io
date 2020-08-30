@@ -17,6 +17,12 @@
               width: 100%;
               height: 100%;
             }
+            .divh1 {
+              color: rgb(255,255,255);
+              background-color: #008CBA;
+              width: 100%;
+              border-collapse: collapse;
+            }
 
             .leftpane {
                 width: 17%;
@@ -116,11 +122,11 @@
 <body>
     <div class="container">
       <div class="toppane" align="center">
-          <h1 background-color='#008CBA' color='rgb(255,255,255)'>Bar Chart Analyzer</h1>
+          <div class="divh1"><h1>Bar Chart Analyzer</h1></div>
           <img src="/data/teaser.png" style="width:100%">
       </div>
       <div class="leftpane" align="center">
-          <div class="toppane"><h1>Annotated Chart Images</h1></div>
+          <div class="divh1"><h1>Annotated Chart Images</h1></div>
           <img src="/data/Test/HorizontalBar/hb1/hb1.png" onclick="myFunction(this);">
           <img src="/data/Test/HorizontalStackedBar/hsb3/hsb3.png " onclick="myFunction(this);">
           <img src="/data/Test/Histogram/hist3/hist3.png " onclick="myFunction(this);">
@@ -131,7 +137,7 @@
       </div>
       
       <div class="rightpane" align="center">
-              <div class="toppane" height="80px"><h1>Control Panel</h1></div>
+              <div class="divh1" height="80px"><h1>Control Panel</h1></div>
               <input type="checkbox" id="corner" onclick="dispPage()"><label font-size="16px">Display Corner points</label>
               <br>
               <input type="checkbox" id="reconstruct" onclick="dispPage()"><label font-size="16px">Display Reconstructed Chart</label>
