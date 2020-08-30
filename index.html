@@ -51,7 +51,7 @@
             }
             .button {
             background-color: rgb(200,200,200);
-            padding: 16px;
+            padding: 10px;
             font-size: 16px;
             color: black;
             cursor: pointer;
@@ -68,47 +68,28 @@
             }
 
             .dropbtn {
-              background-color: rgb(200,200,200);
-              color: black;
-              padding: 16px;
+              background-color: rgb(255,255,255);
+              color: #008CBA;
+              padding: 2px;
               font-size: 16px;
               cursor: pointer;
-              border: 2px solid #008CBA;
-              border-radius: 4px;
-              width: 180px;
+              border: none;
+              margin-bottom:10px;
+              width: 150px;
             }
-
             .dropbtn:hover, .dropbtn:focus {
               background-color: #008CBA;
+              color: rgb(255,255,255);
             }
-
-            .dropdown {
-              position: relative;
-              display: inline-block;
+            .dropbtn option:hover {
+                background-color: #008CBA
+                color: rgb(255,255,255);
             }
-
-            .dropdown-content {
-              display: none;
-              position: absolute;
-              background-color: rgb(200,200,200);
-              min-width: 180px;
-              overflow: auto;
-              box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-            }
-
-            .dropdown-content a {
-              color: black;
-              padding: 12px 16px;
-              text-decoration: none;
-              display: block;
-            }
-
-            .dropdown-content a:hover {background-color: #008CBA}
-            .show {display:block;}
+        
             img {
               border: 1px solid #ddd; /* Gray border */
-              border-radius: 4px;  /* Rounded border */
-              padding: 5px; /* Some padding */
+              border-radius: 2px;  /* Rounded border */
+              padding: 2px; /* Some padding */
               width: 70px; /* Set a small width */
             }
             img:hover {
@@ -121,6 +102,7 @@
               color: white;
               font-size: 35px;
               cursor: pointer;
+            }
         </style>
 </head>
     
@@ -144,22 +126,13 @@
               <button class="button" onclick="dispCorner()">Display Corner points</button>
               <button class="button" onclick="getCSV()">Extract and Download Data</button>
               <label>Choose a color ccheme for chart reconstruction</label>
-              <select id="myDropdown">
-                <<option value="grey">GreyScale</option>
+              <select id="myDropdown" class="dropbtn">
+                <option value="grey">GreyScale</option>
                 <option value="seq">Sequential</option>
                 <option value="diverging">Diverging</option>
               </select>
               <br>
               <button class="button" onclick='extractData()'>Reconstruct Chart</button>
-<!--                  <button class="dropbtn" onclick='extractData()'>Reconstruct Chart</button>-->
-<!--              <div class="dropdown">-->
-<!--                  <button id="myBtn" class="dropbtn">Reconstruct Chart</button>-->
-<!--                  <div id="myDropdown" class="dropdown-content">-->
-<!--                    <a href="#grey">GreyScale</a>-->
-<!--                    <a href="#seq">Sequential</a>-->
-<!--                    <a href="#diverging">Diverging</a>-->
-<!--                  </div>-->
-<!--             </div>-->
       </div>
     
     
