@@ -129,16 +129,17 @@
       <div class="rightpane" align="center">
               <div class="toppane" height="80px"><h1>Widget Settings</h1></div>
               <button class="button" onclick="dispCorner()">Display Corner points</button>
-              <button class="button" onclick="getCSV()">Extract and Download Data</button>
-<!--              <button class="button"  name="load_data" id="load_data">Load Data</button>-->
-              <label font-size="16px">Choose a color map for chart reconstruction</label>
+              <label font-size="16px">Color map for chart reconstruction</label>
+              
               <select id="myDropdown" class="dropbtn">
                 <option value="grey">Sequential Grey map</option>
                 <option value="per">Perceptually uniform map</option>
                 <option value="qual">Qualitative map</option>
               </select>
               <br>
-              <button class="button" onclick='extractData()'>Reconstruct Chart</button>
+              <button class="button" onclick='extractData()'>Display Reconstructed Chart</button>
+              <button class="button" onclick="getCSV()">Extract and Download Data</button>
+              <!--              <button class="button"  name="load_data" id="load_data">Load Data</button>-->
               
       </div>
     
