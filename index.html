@@ -62,8 +62,8 @@
             }
             .button {
             background-color: rgb(200,200,200);
-            padding: 10px;
-            font-size: 16px;
+            padding: 5px;
+            font-size: 18px;
             color: black;
             cursor: pointer;
             border: 2px solid #008CBA;
@@ -150,15 +150,14 @@
               <label font-size="16px">with/without Extracted Corner Points</label>
               <br>
               <input type="checkbox" id="reconstruct" onclick="dispPage()"><label font-size="16px">Display Reconstructed Chart</label>
-              <br>
-              <br>
+              <br><br><br>
               <label font-size="16px">Color map for chart reconstruction</label>
               <select id="myDropdown" class="dropbtn" onchange="dispPage()">
                 <option value="grey">Grayscale color map</option>
                 <option value="per">Perceptually uniform color map</option>
                 <option value="qual">Qualitative color map</option>
               </select>
-              <br><br><br>
+              <br><br>
               <br><br>
               <button class="button" onclick="getCSV()">Download Extracted Data(csv)</button>
               <br><br><br>
