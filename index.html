@@ -184,9 +184,9 @@
       </div>
     </div>
     <script>
-        var imPath ='-'
+        var imgPath ='-'
         function myFunction(imgs) {
-          imPath = imgs.src;
+          imgPath = imgs.src;
           dispPage();
         }
         function dispPage() {
@@ -196,14 +196,14 @@
           var reconsImg = document.getElementById("reconsImg");
           var expandImg = document.getElementById("expandedImg");
           var imgText = document.getElementById("imgtext");
-          console.log(imPath)
-          if(imPath == '-'){
+          console.log(imgPath)
+          if(imgPath == '-'){
             expandImg.src = '/data/bg.png';
-            console.log(imPath);
+            console.log(imgPath);
             expandImg.parentElement.style.display = "block";
           }
           else{
-              console.log(imPath);
+              console.log(imgPath);
               var pathArr = imgPath.split("/");
               var imPath = '';
               for(var i=0;i <pathArr.length-1;i++){
