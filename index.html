@@ -183,7 +183,7 @@
       </div>
     </div>
     <script>
-        var imgPath =''
+        var imgPath ='-'
         function myFunction(imgs) {
           imgPath = imgs.src;
           dispPage();
@@ -196,7 +196,7 @@
           var expandImg = document.getElementById("expandedImg");
           var imgText = document.getElementById("imgtext");
           console.log(imPath)
-          if(imPath == ''){
+          if(imPath == '-'){
             expandImg.src = '/data/bg.png';
             console.log(imPath);
             expandImg.parentElement.style.display = "block";
