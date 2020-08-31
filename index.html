@@ -161,13 +161,10 @@
                 <option value="per">Perceptually uniform color map</option>
                 <option value="qual">Qualitative color map</option>
               </select>
-              <br>
-              <br>
-              <br>
-              <br>
-              <br>
-              <button class="button" onclick="getCSV()">Download Extracted Data(csv)</button>
-              <button class="button" onclick="getCredit()">Credits</button>
+              <br><br><br>
+              <br><br>
+              <button class="button" onclick="getCSV()">Download\nExtracted Data(csv)</button>
+              <button class="button" onclick="getCredit()">Credits\n</button>
               <div class="info" id="credit"  align="center" style="display:none;">
               <p><center><span style="font-weight:bold" >Komal Dadhich, Siri Chandana Daggubati, Jaya Sreevalsan-Nair <br />Graphics-Visualization-Computing Lab</center></span></p>
                   <p>International Institute of Information Technology Bangalore</p>
@@ -186,25 +183,9 @@
             <img id="expandedImg" style="width:50%">
             <img id="reconsImg" style="width:50%">
         </div>
-<!--        <div id="employee_table"></div>-->
-<!--        <div class="info", align="center">-->
-<!--              <p><center><span style="font-weight:bold" >Komal Dadhich, Siri Chandana Daggubati, Jaya Sreevalsan-Nair <br />Graphics-Visualization-Computing Lab</center></span></p>-->
-<!--              <p>International Institute of Information Technology Bangalore,<br /> 26/C, Hosur Rd, Electronics City Phase 1, Electronic City, <br />Bengaluru, Karnataka 560100</p>-->
-<!--              <p><span>Email:</span> <a href="mailto:jnair@iiitb.ac.in">jnair@iiitb.ac.in, komal.dadhich@iiitb.org, daggubati.sirichandana@iiitb.org</a></p>-->
-<!--              <p><span>Website:</span> <a href="https://www.iiitb.ac.in/GVCL/">https://www.iiitb.ac.in/GVCL/</a></p>-->
-<!--              <p>This work has been supported by the Machine Intelligence and Robotics (MINRO) Center grant to IIIT Bangalore from the Government of Karnataka.</p>-->
-<!--          </div>-->
-     </div>
+      </div>
     </div>
     <script>
-        function hide() {
-        var x = document.getElementById("hidediv");
-            if (x.style.display == "none") {
-              x.style.display = "block";
-            } else {
-              x.style.display = "none";
-            }
-        }
         var imgPath =''
         function myFunction(imgs) {
           imgPath = imgs.src;
@@ -268,9 +249,6 @@
           }
           var imName = pathArr[pathArr.length-1].split('.png')[0];
           var canvIm = imPath.concat('data_').concat(imName).concat('.csv');
-          console.log(imPath);
-          console.log(imName);
-          console.log(canvIm);
             //creating an invisible element
             var element = document.createElement('a');
             element.setAttribute('href', canvIm);
@@ -281,12 +259,10 @@
         }
         $( "#hideme" ).click(function() {
           $( "#arch" ).toggle( "slow", function() {
-            // Animation complete.
           });
         });
         $( "#hideved" ).click(function() {
           $( "#demoved" ).toggle( "slow", function() {
-            // Animation complete.
           });
         });
         // To display csv table
